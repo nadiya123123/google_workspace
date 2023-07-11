@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Subscription List</title>
+</head>
+<body>
+    <h1>Subscription List</h1>
+    <ul>
+        {% for subscription in subscriptions %}
+            <li>{{ subscription.subscriptionId }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -4,7 +4,7 @@ import requests
 
 
 
-JSON_PRIVATE_KEY_FILE = 'app/credentials.json'
+JSON_PRIVATE_KEY_FILE = 'credentials.json'
 RESELLER_ADMIN_USER = 'admin@goog-test.febno.in'
 CUSTOMER_DOMAIN = 'goog-test.nadiya.febno.in'
 CUSTOMER_SITE = 'https://www.goog-test.nadiya.febno.in'
@@ -245,8 +245,8 @@ verification_service = build(
 # else:
 #     print("An error occurred:",response.json())
 #
+
 #
-# #
 # # # ..................user updation.........................
 # # #
 # user_id = "107637345770882900763"
@@ -303,7 +303,7 @@ verification_service = build(
 #
 # #
 # # #..............................activate...................................
-#
+
 # id_customer = "C01ld0dos"
 # subscription_id='5570815540'
 # url = f"https://www.googleapis.com/apps/reseller/v1/customers/{id_customer}/subscriptions/{subscription_id}/activate"
@@ -318,7 +318,7 @@ verification_service = build(
 # else:
 #     print("An error occurred:",response.status_code)
 #
-# # #
+# # # #
 # # #........................user delete.........................................
 # #
 #
@@ -347,3 +347,23 @@ verification_service = build(
 #     print("User undeleted successfully.")
 # else:
 #     print("An error occurred:", response.status_code)
+
+#................seat updation...................
+
+id_customer='C01ld0dos'
+subscription_id='5570815540'
+url = f'https://www.googleapis.com/apps/reseller/v1/customers/{id_customer}/subscriptions/{subscription_id}/changeSeats'
+headers = {
+    "Authorization": f"Bearer {access_token}",
+    "Content-Type": "application/json"
+}
+data = {
+        "numberOfSeats": 7,
+        "maximumNumberOfSeats": 10,
+        "kind": 'subscriptions#seats'
+    }
+response = requests.post(url, headers=headers, json=data)
+if response.status_code == 200:
+    print(" seat updated.")
+else:
+    print("An error occurred:", response.status_code)

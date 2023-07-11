@@ -349,21 +349,21 @@ verification_service = build(
 #     print("An error occurred:", response.status_code)
 
 #................seat updation...................
-
-id_customer='C01ld0dos'
-subscription_id='5570815540'
-url = f'https://www.googleapis.com/apps/reseller/v1/customers/{id_customer}/subscriptions/{subscription_id}/changeSeats'
-headers = {
-    "Authorization": f"Bearer {access_token}",
-    "Content-Type": "application/json"
-}
-data = {
-        "numberOfSeats": 7,
-        "maximumNumberOfSeats": 10,
-        "kind": 'subscriptions#seats'
-    }
-response = requests.post(url, headers=headers, json=data)
-if response.status_code == 200:
-    print(" seat updated.")
-else:
-    print("An error occurred:", response.status_code)
+#
+# id_customer='C01ld0dos'
+# subscription_id='5570815540'
+# url = f'https://www.googleapis.com/apps/reseller/v1/customers/{id_customer}/subscriptions/{subscription_id}/changeSeats'
+# headers = {
+#     "Authorization": f"Bearer {access_token}",
+#     "Content-Type": "application/json"
+# }
+# data = {
+#         "numberOfSeats": 7,
+#         "maximumNumberOfSeats": 10,
+#         "kind": 'subscriptions#seats'
+#     }
+# response = requests.post(url, headers=headers, json=data)
+# if response.status_code == 200:
+#     print(" seat updated.")
+# else:
+#     print("An error occurred:", response.status_code)
